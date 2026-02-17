@@ -1,0 +1,12 @@
+
+@theme {
+  --color-black: #050505;
+}
+@layer utilities {
+  .font-sans {
+    font-family: var(--font-geist-sans);
+  }
+  .font-mono {
+    font-family: var(--font-geist-mono);
+  }
+}
