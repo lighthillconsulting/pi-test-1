@@ -3,196 +3,207 @@ import Head from 'next/head';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-purple-500 selection:text-white">
+    <div className="min-h-screen bg-[#050505] text-gray-200 selection:bg-indigo-500/30">
       <Head>
         <title>AπI Managed | The Executive Partner</title>
-        <meta name="description" content="Turn Idea Debt into Assets. The private AI partner for creative entrepreneurs." />
       </Head>
 
-      {/* Navigation */}
-      <nav className="fixed w-full z-50 bg-black/50 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="text-xl font-bold tracking-tighter bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-            AπI MANAGED
-          </div>
-          <div className="hidden md:flex space-x-8 text-sm text-gray-400">
-            <a href="#concept" className="hover:text-white transition-colors">The Concept</a>
-            <a href="#marketing" className="hover:text-white transition-colors">Closed Loop Marketing</a>
-            <a href="#executive" className="hover:text-white transition-colors">Executive Partner</a>
-            <a href="#security" className="hover:text-white transition-colors">Security</a>
-          </div>
-          <button className="px-5 py-2 text-xs font-semibold uppercase tracking-widest border border-white/20 hover:bg-white hover:text-black transition-all rounded-full">
-            Apply for Access
-          </button>
-        </div>
-      </nav>
+      {/* Background Ambience */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-indigo-900/20 blur-[120px]" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-purple-900/10 blur-[120px]" />
+        <div className="absolute inset-0 bg-grid-white/[0.02]" />
+      </div>
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 border-b border-white/5 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black pointer-events-none" />
-        <div className="max-w-7xl mx-auto relative z-10 text-center md:text-left">
-          <div className="inline-block px-3 py-1 mb-6 text-xs font-medium tracking-widest text-purple-400 border border-purple-500/30 rounded-full bg-purple-500/10">
-            PRIVATE BETA // EXECUTIVE TIER
-          </div>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[1.1] mb-8">
-            Turn Idea Debt <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-500">Into Assets.</span>
-          </h1>
-          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mb-10 leading-relaxed">
-            The private AI infrastructure for creative entrepreneurs. 
-            We don't just "chat." We execute. 
-            From <strong>Closed Loop Marketing</strong> to <strong>Royalty Audits</strong>.
-          </p>
-          <div className="flex flex-col md:flex-row gap-4">
-            <button className="px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition-all flex items-center justify-center gap-2">
-              Deploy Your Twin
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </button>
-            <button className="px-8 py-4 border border-white/20 text-white font-medium rounded-lg hover:bg-white/5 transition-all">
-              View Architecture
+      <div className="relative z-10">
+        {/* Navigation */}
+        <nav className="fixed w-full z-50 border-b border-white/5 bg-[#050505]/80 backdrop-blur-xl">
+          <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="text-xl font-bold tracking-tight text-white">AπI</span>
+              <span className="text-xs font-mono text-gray-500 bg-white/5 px-2 py-0.5 rounded-full border border-white/5">BETA</span>
+            </div>
+            <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+              <a href="#engine" className="hover:text-white transition-colors">Outcomes Engine</a>
+              <a href="#partner" className="hover:text-white transition-colors">Executive Partner</a>
+              <a href="#security" className="hover:text-white transition-colors">Security</a>
+            </div>
+            <button className="text-sm font-medium text-white bg-white/10 hover:bg-white/20 border border-white/10 px-4 py-2 rounded-lg transition-all">
+              Client Login
             </button>
           </div>
-        </div>
-      </section>
+        </nav>
 
-      {/* The Two Pillars */}
-      <section id="marketing" className="py-24 px-6 border-b border-white/5 bg-neutral-900/20">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Pillar 1: <br/>The "Closed Loop" Marketing Engine</h2>
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              Stop optimizing for clicks. Start optimizing for <strong>Profit</strong>.
-              AπI connects your Ad Spend directly to your Business Outcomes.
-            </p>
-            <ul className="space-y-4">
-              {[
-                { title: "Music Growth", desc: "Ads pause automatically if Cost Per Stream > $0.20." },
-                { title: "Medical Leads", desc: "Bids adjust based on patient show-up rates, not just form fills." },
-                { title: "E-Commerce", desc: "Campaigns scale autonomously when ROAS > 3.0x." }
-              ].map((item, i) => (
-                <li key={i} className="flex gap-4 items-start p-4 border border-white/10 rounded-lg hover:border-purple-500/50 transition-colors bg-black/40">
-                  <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 mt-1">
-                    {i + 1}
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-white">{item.title}</h3>
-                    <p className="text-sm text-gray-400">{item.desc}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="relative h-[500px] border border-white/10 rounded-xl bg-black/50 overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10" />
+        {/* Hero Section */}
+        <section className="pt-40 pb-32 px-6 text-center">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-xs font-medium tracking-wide animate-in fade-in slide-in-from-bottom-4 duration-700">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+              </span>
+              NOW DEPLOYING PRIVATE NODES
+            </div>
             
-            {/* Mock UI: The Terminal Interface */}
-            <div className="absolute inset-4 bg-black border border-white/10 rounded-lg p-6 font-mono text-xs md:text-sm text-gray-300 shadow-2xl overflow-hidden">
-              <div className="flex gap-2 mb-4 border-b border-white/10 pb-4">
-                <div className="w-3 h-3 rounded-full bg-red-500/50" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
-                <div className="w-3 h-3 rounded-full bg-green-500/50" />
-              </div>
-              <div className="space-y-3 opacity-90">
-                <p><span className="text-purple-400">pi@node:~ $</span> ./marketing-watchdog.sh</p>
-                <p className="text-blue-400">[INFO] Scanning Meta Ads Manager...</p>
-                <p className="text-gray-500">&gt;&gt;&gt; Campaign: "Spotify Growth - UK"</p>
-                <p className="text-gray-500">&gt;&gt;&gt; Spend: $45.20 | Streams: 188 | CPS: $0.24</p>
-                <p className="text-red-400">[ALERT] CPS exceeds threshold ($0.20).</p>
-                <p className="text-yellow-300">[ACTION] Pausing Ad Set ID: 882910...</p>
-                <p className="text-green-400">[SUCCESS] Ad Paused. Budget reallocated to "US - High Intent".</p>
-                <p className="animate-pulse">_</p>
-              </div>
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+              Stop Managing Admin. <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400">Start Managing Assets.</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+              The private AI infrastructure for creative entrepreneurs. We don't just chat.
+              We execute marketing loops, audit royalties, and negotiate deals while you sleep.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <button className="w-full sm:w-auto px-8 py-4 bg-white text-black font-semibold rounded-xl hover:bg-gray-100 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
+                Deploy Your Twin
+              </button>
+              <button className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/10 text-white font-medium rounded-xl hover:bg-white/5 hover:border-white/20 transition-all">
+                View Architecture
+              </button>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="executive" className="py-24 px-6 border-b border-white/5">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div className="order-2 md:order-1 relative h-[500px] border border-white/10 rounded-xl bg-black/50 overflow-hidden">
-             {/* Mock UI: The Executive Brief */}
-             <div className="absolute inset-0 flex items-center justify-center p-8">
-                <div className="w-full max-w-md bg-white text-black p-8 rounded-lg shadow-2xl transform rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
-                  <h3 className="text-xl font-bold mb-4 uppercase tracking-wider border-b-2 border-black pb-2">Decision Brief</h3>
-                  <div className="space-y-4 font-serif">
-                    <div>
-                      <h4 className="font-bold text-gray-500 text-xs uppercase">Subject</h4>
-                      <p>Deal Memo: Sound Engineer Contract</p>
+        {/* Feature Grid (Bento Style) */}
+        <section id="engine" className="py-24 px-6 bg-white/[0.02]">
+          <div className="max-w-6xl mx-auto">
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold text-white mb-4">The Closed Loop Engine</h2>
+              <p className="text-gray-400 max-w-2xl">Most agencies optimize for clicks. We optimize for profit. Your private node connects ad spend directly to real business outcomes.</p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Large Card: The Monitor */}
+              <div className="md:col-span-2 glass-card p-8 rounded-2xl relative overflow-hidden group">
+                <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-30 transition-opacity">
+                  <svg className="w-32 h-32" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Autonomous Arbitrage</h3>
+                <p className="text-gray-400 mb-8 max-w-md">Pi monitors your Spotify streams, Shopify sales, or HubSpot deals 24/7. If ROAS drops, it kills the ad. If profit spikes, it scales the budget.</p>
+                
+                {/* Simulated UI */}
+                <div className="bg-[#0A0A0A] border border-white/10 rounded-lg p-4 font-mono text-xs text-gray-300 shadow-xl">
+                  <div className="flex justify-between items-center mb-3 border-b border-white/10 pb-2">
+                    <span className="text-indigo-400">● LIVE MONITORING</span>
+                    <span className="text-gray-500">11:42:05 AM</span>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex justify-between">
+                      <span>Campaign: <span className="text-white">"Summer Merch Drop"</span></span>
+                      <span className="text-green-400">ACTIVE</span>
                     </div>
-                    <div>
-                      <h4 className="font-bold text-gray-500 text-xs uppercase">Analysis</h4>
-                      <p className="text-sm">Contract includes a 5% royalty clause on master rights. Market standard is 3%. Flagged for negotiation.</p>
+                    <div className="grid grid-cols-3 gap-2 py-2">
+                      <div className="bg-white/5 p-2 rounded">
+                        <div className="text-[10px] text-gray-500">SPEND</div>
+                        <div className="text-white">$142.50</div>
+                      </div>
+                      <div className="bg-white/5 p-2 rounded">
+                        <div className="text-[10px] text-gray-500">PROFIT</div>
+                        <div className="text-green-400">+$480.00</div>
+                      </div>
+                      <div className="bg-white/5 p-2 rounded">
+                        <div className="text-[10px] text-gray-500">ROAS</div>
+                        <div className="text-indigo-400">3.36x</div>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-bold text-gray-500 text-xs uppercase">Recommendation</h4>
-                      <p className="text-sm font-bold">Counter at 3% or offer 5% with a $2k cap.</p>
-                    </div>
-                    <div className="mt-6 pt-4 border-t border-gray-200 flex justify-between items-center">
-                      <span className="text-xs font-mono">STATUS: AWAITING APPROVAL</span>
-                      <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold">π</div>
+                    <div className="text-gray-500 pt-1">
+                      &gt; Threshold met (3.0x). Scaling budget by 15%... <span className="animate-pulse">_</span>
                     </div>
                   </div>
                 </div>
-             </div>
-          </div>
-          <div className="order-1 md:order-2">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Pillar 2: <br/>The Executive Partner</h2>
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              You provide the 1% (Idea) and the 19% (Final Decision). 
-              AπI handles the middle 80%—the research, the drafting, the logistics.
-            </p>
-            <div className="grid grid-cols-1 gap-6">
-              <div className="p-6 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors">
-                <h3 className="font-bold text-lg mb-2 text-purple-300">The Idea Engine</h3>
-                <p className="text-sm text-gray-400">Drop a 1-sentence idea at 2 AM. Wake up to a full Market Scan, Competitor Analysis, and Implementation Plan.</p>
               </div>
-              <div className="p-6 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors">
-                <h3 className="font-bold text-lg mb-2 text-blue-300">The Financial Shield</h3>
-                <p className="text-sm text-gray-400">Automated Royalty Audits. Invoice Chasing. "The Chaser" never sleeps until you get paid.</p>
-              </div>
-              <div className="p-6 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors">
-                <h3 className="font-bold text-lg mb-2 text-green-300">The Network</h3>
-                <p className="text-sm text-gray-400">Agent-to-Agent negotiation. Need a designer? AπI finds, vets, and negotiates with their agents.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Security Section */}
-      <section id="security" className="py-24 px-6 bg-neutral-900/30 border-b border-white/5">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">Infrastructure, Not Software.</h2>
-          <div className="grid md:grid-cols-3 gap-8 text-left">
-            <div className="bg-black p-6 border border-white/10 rounded-xl">
-              <div className="text-2xl mb-4">🔒</div>
-              <h3 className="font-bold mb-2">Single-Tenant Node</h3>
-              <p className="text-sm text-gray-400">You don't share a database. You get your own private instance on isolated hardware.</p>
-            </div>
-            <div className="bg-black p-6 border border-white/10 rounded-xl">
-              <div className="text-2xl mb-4">🔑</div>
-              <h3 className="font-bold mb-2">Two-Key Approval</h3>
-              <p className="text-sm text-gray-400">High-stakes actions (spending money, sending contracts) require your explicit <code className="bg-white/20 px-1 rounded">APPROVE</code> command.</p>
-            </div>
-            <div className="bg-black p-6 border border-white/10 rounded-xl">
-              <div className="text-2xl mb-4">👻</div>
-              <h3 className="font-bold mb-2">Signal Encrypted</h3>
-              <p className="text-sm text-gray-400">State-level security. No logs. No "cloud backups" that can be subpoenaed.</p>
+              {/* Small Card: Security */}
+              <div className="glass-card p-8 rounded-2xl flex flex-col justify-between group hover:border-indigo-500/30 transition-colors">
+                <div>
+                  <div className="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-2">Two-Key Approval</h3>
+                  <p className="text-sm text-gray-400">
+                    High-stakes actions (spending money, sending contracts) require your explicit <span className="text-white font-mono bg-white/10 px-1 py-0.5 rounded">APPROVE</span> command in Signal.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-6 border-t border-white/10 text-center md:text-left">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-          <p>© 2026 AπI Managed / Lighthill Consulting.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white">Manifesto</a>
-            <a href="#" className="hover:text-white">Login</a>
+        {/* The Executive Partner Section */}
+        <section id="partner" className="py-24 px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-white">Your "Chief of Staff" <br/>in the Cloud.</h2>
+                <div className="space-y-6">
+                  {[
+                    { title: "The Idea Engine", desc: "Drop a 1-sentence idea at 2 AM. Wake up to a full Market Scan and Spec Sheet." },
+                    { title: "The Financial Shield", desc: "Automated royalty auditing and invoice chasing. We find the money you forgot." },
+                    { title: "The Network", desc: "Agent-to-Agent negotiation. We find the talent, vet the rates, and book the deal." }
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-4">
+                      <div className="w-6 h-6 rounded-full bg-white/10 flex-shrink-0 flex items-center justify-center text-xs mt-1">{i + 1}</div>
+                      <div>
+                        <h4 className="text-white font-medium">{item.title}</h4>
+                        <p className="text-gray-400 text-sm mt-1">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="relative">
+                {/* Abstract Visual - The "Twin" */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 to-purple-500/20 blur-3xl rounded-full" />
+                <div className="relative glass-card p-1 rounded-2xl animate-float">
+                  <div className="bg-black/80 rounded-xl p-6 border border-white/5">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-purple-600" />
+                      <div>
+                        <div className="text-sm font-medium text-white">AπI Executive</div>
+                        <div className="text-xs text-green-400">Online • Signal Encrypted</div>
+                      </div>
+                    </div>
+                    <div className="space-y-4">
+                      <div className="bg-white/5 rounded-lg p-3 text-sm text-gray-300">
+                        <span className="text-indigo-300 text-xs uppercase tracking-wide block mb-1">Incoming Request</span>
+                        "Find me a mix engineer for the new track. Budget $2k."
+                      </div>
+                      <div className="flex justify-end">
+                         <div className="bg-indigo-600/20 border border-indigo-500/30 rounded-lg p-3 text-sm text-indigo-100 max-w-[90%]">
+                          <span className="text-indigo-300 text-xs uppercase tracking-wide block mb-1">Decision Brief • 08:00 AM</span>
+                          I've found 3 candidates available next week.
+                          <ul className="mt-2 space-y-1 text-xs">
+                            <li>1. <strong>Mark S.</strong> - $1.8k (Grammy nominated)</li>
+                            <li>2. <strong>Sarah J.</strong> - $1.5k (Indie specialist)</li>
+                          </ul>
+                          <div className="mt-3 pt-2 border-t border-indigo-500/20 text-xs font-mono text-center opacity-70">
+                            Reply "1" or "2" to book.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </footer>
+        </section>
+
+        {/* Footer */}
+        <footer className="py-12 px-6 border-t border-white/5 bg-black">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+            <p>© 2026 Lighthill Consulting / AπI Managed.</p>
+            <div className="flex gap-6 mt-4 md:mt-0">
+              <a href="#" className="hover:text-white transition-colors">Manifesto</a>
+              <a href="#" className="hover:text-white transition-colors">Privacy</a>
+              <a href="#" className="hover:text-white transition-colors">Contact</a>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }
