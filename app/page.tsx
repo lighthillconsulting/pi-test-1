@@ -95,8 +95,8 @@ export default function Home() {
               <div className="space-y-3 opacity-90">
                 <p><span className="text-purple-400">pi@node:~ $</span> ./marketing-watchdog.sh</p>
                 <p className="text-blue-400">[INFO] Scanning Meta Ads Manager...</p>
-                <p className="text-gray-500">>> Campaign: "Spotify Growth - UK"</p>
-                <p className="text-gray-500">>> Spend: $45.20 | Streams: 188 | CPS: $0.24</p>
+                <p className="text-gray-500">&gt;&gt;&gt; Campaign: "Spotify Growth - UK"</p>
+                <p className="text-gray-500">&gt;&gt;&gt; Spend: $45.20 | Streams: 188 | CPS: $0.24</p>
                 <p className="text-red-400">[ALERT] CPS exceeds threshold ($0.20).</p>
                 <p className="text-yellow-300">[ACTION] Pausing Ad Set ID: 882910...</p>
                 <p className="text-green-400">[SUCCESS] Ad Paused. Budget reallocated to "US - High Intent".</p>
